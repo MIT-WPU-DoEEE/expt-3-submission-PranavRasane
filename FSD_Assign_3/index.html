@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="ajax.js" defer></script>
+    <script src="script.js" defer></script>
+    <style>
+      /* Reset body default styles */
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      /* Form container styles */
+      .container {
+        background-color: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+        color: #007bff;
+        margin-bottom: 20px;
+      }
+
+      /* Form styling */
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        font-weight: bold;
+        text-align: left;
+        margin-top: 10px;
+      }
+
+      input[type='text'],
+      input[type='email'],
+      input[type='tel'] {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 16px;
+        margin-top: 5px;
+      }
+
+      .form-block {
+        margin-bottom: 15px;
+      }
+
+      button {
+        background-color: #007bff;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        width: 100%;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      /* Error messages */
+      .error-message {
+        color: red;
+        font-size: 14px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Form Submission</h1>
+      <form id="myForm">
+        <div class="form-block">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <span id="nameError" class="error-message"></span>
+        </div>
+
+        <div class="form-block">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" required />
+          <span id="phoneError" class="error-message"></span>
+        </div>
+
+        <div class="form-block">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <span id="emailError" class="error-message"></span>
+        </div>
+
+        <div class="form-block">
+          <label for="zip">Zip Code:</label>
+          <input type="text" id="zip" name="zip" required />
+          <span id="zipError" class="error-message"></span>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
